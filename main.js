@@ -12,4 +12,10 @@ function draw() {
   circle(xCircle, yCircle, diameter);
   xCircle += velocityXCircle;
   yCircle += velocityYCircle;
+
+  if(xCircle > width || xCircle < 0){
+    velocityXCircle *= -1;
+  } else if (yCircle > height || yCircle < 0){
+    velocityYCircle *= -1;
+  }
 }
