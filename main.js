@@ -36,6 +36,13 @@ function collisionCheck(){
   }
 }
 
+// Function to check the collision with the racket
+function collisionCheckRacket(){
+    if(xCircle - raio < xRacket + lengthRacket && yCircle - raio < yRacket + heightRacket && yCircle + raio > yRacket){
+        velocityXCircle *= -1;
+    }
+}
+
 // Function to move the racket
 function moveRacketplayer1(){
   if(keyIsDown(UP_ARROW)){
@@ -57,4 +64,5 @@ function draw() {
   movingTheCircle();
   moveRacketplayer1();
   collisionCheck();
+  collisionCheckRacket();
 }
