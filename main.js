@@ -1,7 +1,8 @@
 function setup() {
-  // put setup code here
+  createCanvas(1863, 965);
 }
 
 function draw() {
-  // put drawing code here
+  background(0);
+  circle(100, 100, 100);
 }
