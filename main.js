@@ -1,7 +1,8 @@
 // Variables
-xCircle = 300; yCircle = 200; diameter = 15;
+let xCircle = 300; let yCircle = 200; let diameter = 15;
+let raio = diameter/2;
 
-velocityXCircle = 6; velocityYCircle = 6;
+let velocityXCircle = 6; let velocityYCircle = 6;
 
 // Functions
 function setup() {
@@ -13,9 +14,9 @@ function draw() {
   xCircle += velocityXCircle;
   yCircle += velocityYCircle;
 
-  if(xCircle > width || xCircle < 0){
+  if(xCircle + raio > width || xCircle - raio < 0){
     velocityXCircle *= -1;
-  } else if (yCircle > height || yCircle < 0){
+  } else if (yCircle + raio > height || yCircle - raio < 0){
     velocityYCircle *= -1;
   }
 }
