@@ -1,3 +1,6 @@
+// Variables for points
+let myPoints = 0; let enemyPoints = 0;
+
 // Variables Circle
 let xCircle = 300; let yCircle = 200; let diameter = 15; let raio = diameter/2;
 
@@ -46,6 +49,8 @@ function collisionCheck(){
   } else if (yCircle + raio > height || yCircle - raio < 0){
     velocityYCircle *= -1;
   }
+  console.log(myPoints);
+  console.log(enemyPoints);
 }
 
 // Function to check the collision with the racket
@@ -58,10 +63,10 @@ function collisionCheckRacket(){
 
 // Function to check the collision with the racket enemy
 function collisionCheckRacketEnemy(){
-    hit = collideRectCircle(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket, xCircle, yCircle, raio);
-    if(hit){
-        velocityXCircle *= -1;
-    }
+  hit = collideRectCircle(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket, xCircle, yCircle, raio);
+  if(hit){
+    velocityXCircle *= -1;
+  }
 }
 
 // Function to move the racket
