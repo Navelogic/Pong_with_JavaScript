@@ -3,6 +3,7 @@ let xCircle = 300; let yCircle = 200; let diameter = 15;
 let raio = diameter/2;
 
 let xRacket = 5; let yRacket = 150; let lengthRacket = 10; let heightRacket = 90;
+let hit = false;
 
 let velocityXCircle = 6; let velocityYCircle = 6;
 
@@ -38,11 +39,10 @@ function collisionCheck(){
 
 // Function to check the collision with the racket
 function collisionCheckRacket(){
-    if(xCircle - raio < xRacket + lengthRacket &&
-        yCircle - raio < yRacket + heightRacket &&
-        yCircle + raio > yRacket) {
-        velocityXCircle *= -1;
-    }
+  hit = collideRectCircle(xRacket, yRacket, lengthRacket, heightRacket, xCircle, yCircle, raio);
+  if(hit){
+    velocityXCircle *= -1;
+  }
 }
 
 // Function to move the racket
