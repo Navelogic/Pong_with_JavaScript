@@ -2,7 +2,7 @@
 let myPoints = 0; let enemyPoints = 0;
 
 // Variables Circle
-let xCircle = 300; let yCircle = 200; let diameter = 15; let raio = diameter/2;
+let xCircle = 300; let yCircle = 200; let diameter = 30; let raio = diameter/2;
 
 // Variables Racket Player
 let xRacket = 5; let yRacket = 150; let lengthRacket = 10; let heightRacket = 90;
@@ -99,7 +99,6 @@ function showPoints(){
     enemyPoints += 1;
   }
 }
-
 
 // Main
 function draw() {
