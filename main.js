@@ -87,6 +87,19 @@ function moveRacketEnemy(){
   }
 }
 
+// Function to show the points
+function showPoints(){
+  fill(255);
+  textSize(32);
+  text(myPoints, 26, 26);
+  text(enemyPoints, 550, 26);
+  if(xCircle > 590){
+    myPoints += 1;
+  } else if(xCircle < 10){
+    enemyPoints += 1;
+  }
+}
+
 
 // Main
 function draw() {
@@ -100,4 +113,5 @@ function draw() {
   collisionCheck();
   collisionCheckRacket();
   collisionCheckRacketEnemy();
+  showPoints();
 }
