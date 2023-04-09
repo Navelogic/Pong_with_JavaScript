@@ -1,11 +1,16 @@
-// Variables
-let xCircle = 300; let yCircle = 200; let diameter = 15;
-let raio = diameter/2;
+// Variables Circle
+let xCircle = 300; let yCircle = 200; let diameter = 15; let raio = diameter/2;
 
+// Variables Racket Player
 let xRacket = 5; let yRacket = 150; let lengthRacket = 10; let heightRacket = 90;
+
+// Variables Hit
 let hit = false;
+
+// Variables Racket Enemy
 let enmyxRacket = 585; let enmyyRacket = 150; let enmylengthRacket = 10; let enmyheightRacket = 90;
 
+// Variables Velocity
 let velocityXCircle = 6; let velocityYCircle = 6;
 
 // Background
