@@ -30,7 +30,7 @@ function drawingTheRacket(){
 
 // Racket Enemy
 function drawingTheRacketEnemy(){
-    rect(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket);
+  rect(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket);
 }
 
 // Function to move the circle
@@ -56,12 +56,29 @@ function collisionCheckRacket(){
   }
 }
 
+// Function to check the collision with the racket enemy
+function collisionCheckRacketEnemy(){
+    hit = collideRectCircle(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket, xCircle, yCircle, raio);
+    if(hit){
+        velocityXCircle *= -1;
+    }
+}
+
 // Function to move the racket
 function moveRacketplayer1(){
   if(keyIsDown(UP_ARROW)){
     yRacket -= 10;
   } else if(keyIsDown(DOWN_ARROW)){
     yRacket += 10;
+  }
+}
+
+// Function to move the racket enemy
+function moveRacketEnemy(){
+  if(keyIsDown(87)){
+    enmyyRacket -= 10;
+  } else if(keyIsDown(83)){
+    enmyyRacket += 10;
   }
 }
 
@@ -74,6 +91,8 @@ function draw() {
   drawingTheRacketEnemy();
   movingTheCircle();
   moveRacketplayer1();
+  moveRacketEnemy();
   collisionCheck();
   collisionCheckRacket();
+  collisionCheckRacketEnemy();
 }
