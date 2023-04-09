@@ -4,6 +4,7 @@ let raio = diameter/2;
 
 let xRacket = 5; let yRacket = 150; let lengthRacket = 10; let heightRacket = 90;
 let hit = false;
+let enmyxRacket = 585; let enmyyRacket = 150; let enmylengthRacket = 10; let enmyheightRacket = 90;
 
 let velocityXCircle = 6; let velocityYCircle = 6;
 
@@ -20,6 +21,11 @@ function drawingTheCircle(){
 // Racket Player
 function drawingTheRacket(){
   rect(xRacket, yRacket, lengthRacket, heightRacket);
+}
+
+// Racket Enemy
+function drawingTheRacketEnemy(){
+    rect(enmyxRacket, enmyyRacket, enmylengthRacket, enmyheightRacket);
 }
 
 // Function to move the circle
@@ -60,6 +66,7 @@ function draw() {
   background(0);
   drawingTheCircle();
   drawingTheRacket();
+  drawingTheRacketEnemy();
   movingTheCircle();
   moveRacketplayer1();
   collisionCheck();
