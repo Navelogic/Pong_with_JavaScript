@@ -30,6 +30,8 @@ let ponto;
 let raquetada;
 let trilha;
 
+let chanceDeErrar = 0;
+
 function preload(){
   trilha = loadSound("lib\\addons\\sound\\trilha.mp3");
   raquetada = loadSound("lib\\addons\\sound\\raquetada.mp3");
@@ -54,6 +56,16 @@ function draw() {
   verificaColisaoRaquete(xRaqueteOponente, yRaqueteOponente);
   incluiPlacar();
   marcaPonto();
+  bolinhaNaoFicaPresa();
+}
+
+function bolinhaNaoFicaPresa(){
+  if (xBolinha - raio < 0){
+    xBolinha = 23
+  }
+  if (xBolinha + raio > 600){
+    xBolinha = 580
+  }
 }
 
 function mostraBolinha(){
@@ -102,6 +114,21 @@ function verificaColisaoRaquete(x, y){
 function movimentaRaqueteOponente(){
   velocidadeYOponente = yBolinha -yRaqueteOponente - raqueteComprimento / 2 - 30;
   yRaqueteOponente += velocidadeYOponente
+  calculaChanceDeErrar();
+}
+
+function calculaChanceDeErrar() {
+  if (pontosDoOponente >= meusPontos) {
+    chanceDeErrar += 1
+    if (chanceDeErrar >= 39){
+      chanceDeErrar = 40
+    }
+  } else {
+    chanceDeErrar -= 1
+    if (chanceDeErrar <= 35){
+      chanceDeErrar = 35
+    }
+  }
 }
 
 function incluiPlacar(){
